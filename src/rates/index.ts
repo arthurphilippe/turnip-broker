@@ -1,3 +1,3 @@
-export * from "./user.db";
+export * from "./rates.db";
 
 // export const commands = [{ "": undefined }, {}];

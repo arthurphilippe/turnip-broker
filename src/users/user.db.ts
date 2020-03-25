@@ -6,7 +6,7 @@ export interface User {
     timezone: string;
 }
 
-export interface DbUser extends mongoose.Document {}
+export interface DbUser extends mongoose.Document, User {}
 
 export const SchemaUser = new mongoose.Schema({
     discordId: { type: String, unique: true },
@@ -14,4 +14,4 @@ export const SchemaUser = new mongoose.Schema({
     timezone: { type: String },
 });
 
-export const Users = mongoose.model<DbUser>("Users", SchemaUser);
+export const Db = mongoose.model<DbUser>("Users", SchemaUser);
