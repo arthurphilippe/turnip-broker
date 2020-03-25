@@ -9,7 +9,8 @@ export enum Kind {
 
 export interface Rate {
     price: number;
-    discordId: { user: string; guild: string };
+    user: mongoose.Types.ObjectId | users.DbUser;
+    guildId: string;
     kind: Kind;
     from: Date;
     to: Date;
@@ -23,10 +24,8 @@ interface Model extends mongoose.Model<DbRate> {
 
 export const SchemaRate = new mongoose.Schema({
     price: { type: Number },
-    discordId: {
-        user: { type: String },
-        guild: { type: String },
-    },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: users.Db },
+    guildId: { type: String },
     kind: { type: Number, required: true },
     from: { type: Date },
     to: { type: Date },
@@ -56,11 +55,14 @@ SchemaRate.static("add", async function(
             } else {
                 from.hours(12);
                 from.startOf("hour");
-                to.endOf("day");
+                to.hours(user.store.closes.hours);
+                to.min(user.store.closes.minutes);
+                to.startOf("minute");
             }
         } else {
             from.startOf("day");
-            to.endOf("day");
+            to.hour(12);
+            to.startOf("hour");
         }
     } catch (err) {
         console.error(err);
@@ -69,8 +71,9 @@ SchemaRate.static("add", async function(
 
     try {
         await this.create({
+            user: user._id,
             price,
-            discordId: { user: user.discordId, guild: guildId },
+            guildId,
             kind,
             from: from.toDate(),
             to: to.toDate(),
