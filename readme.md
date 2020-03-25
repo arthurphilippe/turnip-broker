@@ -7,7 +7,9 @@ The first goal of this bot is for ppl to report:
 
 Knowing that, the bot can tell where the users shall sell their turnips and inform them on their expected earnings.
 
-# Commands
+# Planned Commands
+
+All are subject to change.
 
 -  "get timezones" + an optional country code
    -  returns the available timezones
