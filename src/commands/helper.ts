@@ -15,7 +15,12 @@ export function helper(msg: discord.Message | discord.PartialMessage, _splitMsg:
         {
             name: "A quoi je sers ?",
             value:
-                "Je suis là pour vous aider à trouver où revendre vos navets au meilleur prix !\nIl suffit que chacun me dise à quel prix son magasin rachète les navets.\nEt si vous n'êtes pas dans le même fuseau horraire que tout le monde : pas de panique (à bord), il y a une commande pour me le préciser ! Regardez vous-même, ci-dessous...",
+                "Je suis là pour vous aider à trouver où revendre vos navets au meilleur prix !\nIl suffit que chacun me dise à quel prix son magasin rachète les navets.\nEt si vous n'êtes pas dans le même fuseau horraire que tout le monde : pas de panique (à bord), il y a une commande pour me le préciser ! Regardez vous-même, ci-dessous...\nJ'éspère que vous me trouverez utile !",
+        },
+        {
+            name: "Ce qu'il me manque...",
+            value:
+                "Je ne peux pas encore vous aider lorsqu'il s'agit de regarder où est-ce que vous pouvez acheter vos navet le moins cher, même s'il y a une commande pour me notifier des prix de vente chez vous.\nJe n'ai pas non plus une orthographe parfaite, il m'arrive de faire des fautes.\nJe pense aussi que ça serait cool si je pouvais notifier ceux qui le veulent lorsqu'il y a des prix de rachat qui peuvent les intéresser.\nEnfin, j'aimerai être traduite entièrement en anglais et français de façon à me rendre utile chez davantage de monde.",
         },
         { name: "\u200B", value: "\u200B" },
         {
