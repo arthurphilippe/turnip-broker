@@ -15,7 +15,7 @@ export function helper(msg: discord.Message | discord.PartialMessage, _splitMsg:
         {
             name: "A quoi je sers ?",
             value:
-                "Je suis là pour vous aider à trouver où revendre vos navet au meilleur prix !\nIl suffit que chacun me dise à quel prix son magasin rachète les navets.\nEt si vous n'êtes pas dans le même fuseau horraire que tout le monde : pas de panique (à bord), il y a une commande pour me le préciser ! Regardez vous-même, ci-dessous...",
+                "Je suis là pour vous aider à trouver où revendre vos navets au meilleur prix !\nIl suffit que chacun me dise à quel prix son magasin rachète les navets.\nEt si vous n'êtes pas dans le même fuseau horraire que tout le monde : pas de panique (à bord), il y a une commande pour me le préciser ! Regardez vous-même, ci-dessous...",
         },
         { name: "\u200B", value: "\u200B" },
         {
