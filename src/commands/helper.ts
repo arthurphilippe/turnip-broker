@@ -26,12 +26,12 @@ export function helper(msg: discord.Message | discord.PartialMessage, _splitMsg:
         {
             name: "Cours à la vente et au rachat",
             value:
-                "`navet!sell <prix>`\nM'indique le prix auquel vous pouvez revendre vos navet sur votre île.\n\n`navet!buy <prix>`\nM'indique le prix auquel vous pouvez acheter des navets à Porcelette, le dimanche.",
+                "`navet!sell <prix>`\nM'indique le prix auquel vous pouvez revendre vos navets sur votre île.\n\n`navet!buy <prix>`\nM'indique le prix auquel vous pouvez acheter des navets à Porcelette, le dimanche.",
         },
         {
             name: "Tableau du cours du navet",
             value:
-                "`navet!board`\nAffiche les prix rapportés par tout le monde, dans les magasin encore ouverts, du prix le plus haut au plus faible.",
+                "`navet!board`\nAffiche les prix rapportés par tout le monde, dans les magasin encore ouverts, du prix le plus haut au plus bas.",
         },
         { name: "\u200B", value: "\u200B" },
         {
