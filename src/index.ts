@@ -9,6 +9,7 @@ const client = new discord.Client();
 
 client.on("ready", () => {
     console.log("ready");
+    client.user.setPresence({ activity: { name: 'faites : "navet!aled"' } });
 });
 
 import * as mongoose from "mongoose";

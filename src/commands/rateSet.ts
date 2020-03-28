@@ -21,6 +21,12 @@ async function setRate(
         return;
     }
 
+    let price = parseInt(splitMsg[0]);
+    if (isNaN(price) || price < 0) {
+        msg.channel.send("Le prix doit être un nombre entier strictement positif.");
+        return;
+    }
+
     let now = moment()
         .tz(user.timezone)
         .toDate();
@@ -36,9 +42,6 @@ async function setRate(
         );
     }
     try {
-        let price = parseInt(splitMsg[0]);
-        if (isNaN(price) || price < 0)
-            throw new Error("Le prix doit être un nombre entier strictement positif.");
         await rates.Db.add(user, msg.guild.id, parseInt(splitMsg[0]), kind);
 
         if (kind == rates.Kind.buying) {
@@ -49,7 +52,7 @@ async function setRate(
             );
         } else {
             msg.channel.send(
-                "🟢 C'est noté: votre magasin rachette les navet à " + splitMsg[0] + " clo."
+                "🟢 C'est noté: votre magasin rachette les navets à " + splitMsg[0] + " clo."
             );
         }
     } catch (err) {

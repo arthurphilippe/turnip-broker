@@ -32,7 +32,7 @@ export function helper(msg: discord.Message | discord.PartialMessage, _splitMsg:
         {
             name: "Fuseaux horraires",
             value:
-                "`navet!getzones <code pays ISO à deux lettres>`\nAffiche les fuseaux horraires qui existent pour votre pays.\n\n`navet!setzone <nom du fuseau>`\nM'indique le fuseau horraire dans lequel votre île est située. Le nom du fuseau à donner doit être tel que renvoyé par la commande `getzones`.",
+                '`navet!getzones <code pays ISO à deux lettres>`\nAffiche les fuseaux horraires qui existent pour votre pays.\nLe code de la France est : "fr"\n\n`navet!setzone <nom du fuseau>`\nM\'indique le fuseau horraire dans lequel votre île est située. Le nom du fuseau à donner doit être tel que renvoyé par la commande `getzones`.',
         },
     ]);
 
