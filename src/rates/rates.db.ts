@@ -23,12 +23,12 @@ interface Model extends mongoose.Model<DbRate> {
 }
 
 export const SchemaRate = new mongoose.Schema({
-    price: { type: Number },
-    user: { type: mongoose.Schema.Types.ObjectId, ref: users.Db },
-    guildId: { type: String },
+    price: { type: Number, min: 1, required: true },
+    user: { type: mongoose.Schema.Types.ObjectId, ref: users.Db, required: true },
+    guildId: { type: String, required: true },
     kind: { type: Number, required: true },
-    from: { type: Date },
-    to: { type: Date },
+    from: { type: Date, required: true },
+    to: { type: Date, required: true },
 });
 
 SchemaRate.static("add", async function(
@@ -56,7 +56,7 @@ SchemaRate.static("add", async function(
                 from.hours(12);
                 from.startOf("hour");
                 to.hours(user.store.closes.hours);
-                to.min(user.store.closes.minutes);
+                to.minutes(user.store.closes.minutes);
                 to.startOf("minute");
             }
         } else {
@@ -79,8 +79,7 @@ SchemaRate.static("add", async function(
             to: to.toDate(),
         } as Rate);
     } catch (err) {
-        console.error(err);
-        throw new Error("Cannot commit to database...");
+        throw new Error(`Failed to create rate/price. Message from the drive:\n` + err.message);
     }
 });
 
