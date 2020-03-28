@@ -11,6 +11,7 @@ client.on("ready", () => {
     console.log("ready");
     client.user.setPresence({ activity: { name: 'faites : "navet!aled"' } });
 });
+client.login(process.env.DISCORD_BOT_TOKEN);
 
 import * as mongoose from "mongoose";
 

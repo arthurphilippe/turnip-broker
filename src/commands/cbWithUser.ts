@@ -22,7 +22,7 @@ export async function cbWithUser(
             user.name = msg.author.username;
             user.timezone = "Europe/Paris";
             msg.channel.send(
-                "Je ne pense pas vous avoir vu avant, ainsi j'ai pris la liberté de noter que vous êtes dans le fuseau horraire de Paris. Vous pouvez changer ceci en regardant le commandes de fuseau horraire en tapant : `navet!`."
+                "Je ne pense pas vous avoir vu jusqu'alors, ainsi j'ai pris la liberté de noter que vous êtes dans le fuseau horraire de Paris. Vous pouvez changer ceci en regardant les commandes de fuseau horraire en tapant :\n`navet!aled`."
             );
             cb(msg, splitMsg, await user.save());
         } catch (err) {
