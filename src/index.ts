@@ -15,11 +15,8 @@ client.on("ready", () => {
 import * as mongoose from "mongoose";
 
 mongoose
-    .connect(process.env.MONGO_URL || `mongodb://root:example@localhost`, {
-        db: process.env.MONGO_DBNAME || `turnip`,
-        useUnifiedTopology: true,
+    .connect(process.env.MONGO_URL || `mongodb://root:example@localhost/turnip`, {
         useNewUrlParser: true,
-        authSource: "admin",
         useCreateIndex: true,
     })
     .then(() => {
