@@ -15,7 +15,7 @@
         "discord.js": "^12.0.2",
         "moment": "^2.24.0",
         "moment-timezone": "^0.5.28",
-        "mongoose": "^5.9.6"
+        "mongoose": "^5.13.15"
     },
     "devDependencies": {
         "@types/moment-timezone": "^0.5.13",
